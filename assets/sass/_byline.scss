@@ -1,0 +1,30 @@
+
+.byline {
+    text-align: center;
+    color: lighten($font, 12.5);
+}
+
+.byline__category {
+    color: #000;
+}
+
+.byline__button {
+    @include no-button;
+}
+
+.byline__content {
+    text-align: left;
+
+    p {
+        font-size: 0.85rem;
+    }
+
+    *:last-child {
+        margin-bottom: 0;
+    }
+
+    h4 {
+        margin-top: 0;
+        font-size: 1rem;
+    }
+}
