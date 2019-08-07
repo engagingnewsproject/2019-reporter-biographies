@@ -5,8 +5,10 @@
  * Any data that will be consistently used across all items are defined here. Think of this like defaults and global info. 
  */
 
+define('NEWSBEAT_DIRECTORY_NAME', '2019-reporter-biographies');
+define('IS_DEV', $_SERVER[HTTP_HOST] !== 'thenewsbeat.org');
 define('SITE_NAME', 'The Gazette Star');
-define('DIST_URL', "https://$_SERVER[HTTP_HOST]/dist");
+define('DIST_URL', IS_DEV ? "https://$_SERVER[HTTP_HOST]/dist" : "https://$_SERVER[HTTP_HOST]/".NEWSBEAT_DIRECTORY_NAME."/dist");
 define('STUDY_PREFIX', 'bio_');
 
 // We’d need five versions of the site:
@@ -43,14 +45,10 @@ $authorBios = array(
 );
 
 define('AUTHOR_BIO', isset($authorBios[$authorBioKey]) ? $authorBios[$authorBioKey] : false);
-define('AUTHOR_PHOTO', isset($authorPhotos[$authorPhotoKey]) ? array('src' => $authorPhotos[$authorPhotoKey], 'alt' => '') : false);
-define('AUTHOR', array(
-    'image' => AUTHOR_PHOTO,
-    'name'  => 'Jim Phipps',
-    'content' => AUTHOR_BIO
-));
-define('USE_AUTHOR_PHOTO', !empty(AUTHOR_PHOTO));
-define('USE_AUTHOR_BIO',!empty(AUTHOR_BIO));
+define('AUTHOR_PHOTO', isset($authorPhotos[$authorPhotoKey]) ? $authorPhotos[$authorPhotoKey] : false);
+define('AUTHOR_NAME', 'Jim Phipps');
+define('USE_AUTHOR_PHOTO', isset($authorPhotos[$authorPhotoKey]));
+define('USE_AUTHOR_BIO', isset($authorBios[$authorBioKey]));
 define('PUBDATE', 'Aug. 6, 2019');
 
 

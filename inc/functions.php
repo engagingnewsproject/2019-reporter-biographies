@@ -36,6 +36,16 @@ function getDistURL() {
 	return DIST_URL;
 }
 
+function getAuthor() {
+	return array(
+		'image' => array(
+			'src' => AUTHOR_PHOTO,
+			'alt' => ''
+		),
+		'name'  => AUTHOR_NAME,
+		'content' => AUTHOR_BIO
+	);
+}
 
 function get_current_url() {
 	return "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";

@@ -9,7 +9,7 @@ $featuredImage = array(
 );
 
 $article = array(
-    'author' => AUTHOR,
+    'author' => getAuthor(),
     'pubdate' => PUBDATE,
     'title' => 'What The New Superbug Means For The Fight Against Antibiotic Resistance',
     'featuredImage' => $featuredImage,

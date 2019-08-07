@@ -9,7 +9,7 @@ $featuredImage = array(
 );
 
 $article = array(
-    'author' => AUTHOR,
+    'author' => getAuthor(),
     'pubdate' => PUBDATE,
     'title' => 'US Demographic Shift Will Have Huge Political Impact',
     'featuredImage' => $featuredImage,
