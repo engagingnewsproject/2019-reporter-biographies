@@ -20,7 +20,7 @@ define('NEWSBEAT_DIRECTORY_NAME', '2019-reporter-biographies');
  */
 define('STUDY_PREFIX', 'bio_');
 
-define('IS_DEV', $_SERVER[HTTP_HOST] !== 'thenewsbeat.org');
+define('IS_DEV', "$_SERVER[HTTP_HOST]" !== 'thenewsbeat.org');
 define('SITE_NAME', 'The Gazette Star');
 define('DIST_URL', IS_DEV ? "https://$_SERVER[HTTP_HOST]/dist" : "https://$_SERVER[HTTP_HOST]/".NEWSBEAT_DIRECTORY_NAME."/dist");
 
