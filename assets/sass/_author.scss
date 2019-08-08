@@ -7,8 +7,8 @@
 
 .author__image {
     border-radius: 50%;
-    width: 75px;
-    height: 75px;
+    width: 100px;
+    height: 100px;
     margin-right: $spacing__base * 0.4;
     margin-bottom: $spacing__base * 0.2;
     float: left;
@@ -24,7 +24,7 @@
     font-size: 0.8rem;
     margin: 0;
     position: relative;
-    padding-top: 0.4rem;
+    padding-top: 2rem;
 }
 
 .author__job {
@@ -43,7 +43,7 @@
 
 .author__content {
 
-    margin-top: $spacing__base * 0.6;
+    margin-top: $spacing__base * 0.4;
 
     p, ul {
         font-size: 0.85rem;
