@@ -1,6 +1,6 @@
 <?php
 
-function get_the_ip() {
+function getIPAddress() {
 	//Just get the headers if we can or else use the SERVER global
 	if ( function_exists( 'apache_request_headers' ) ) {
 		$headers = apache_request_headers();
@@ -9,14 +9,14 @@ function get_the_ip() {
 	}
 	//Get the forwarded IP if it exists
 	if ( array_key_exists( 'X-Forwarded-For', $headers ) && filter_var( $headers['X-Forwarded-For'], FILTER_VALIDATE_IP, FILTER_FLAG_IPV4 ) ) {
-		$the_ip = $headers['X-Forwarded-For'];
+		$ip = $headers['X-Forwarded-For'];
 	} elseif ( array_key_exists( 'HTTP_X_FORWARDED_FOR', $headers ) && filter_var( $headers['HTTP_X_FORWARDED_FOR'], FILTER_VALIDATE_IP, FILTER_FLAG_IPV4 )) {
-		$the_ip = $headers['HTTP_X_FORWARDED_FOR'];
+		$ip = $headers['HTTP_X_FORWARDED_FOR'];
 	} else {
-		$the_ip = filter_var( $_SERVER['REMOTE_ADDR'], FILTER_VALIDATE_IP, FILTER_FLAG_IPV4 );
+		$ip = filter_var( $_SERVER['REMOTE_ADDR'], FILTER_VALIDATE_IP, FILTER_FLAG_IPV4 );
 	}
-	if(!empty($the_ip)){
-		return $the_ip;
+	if(!empty($ip)){
+		return $ip;
 	} else {
 		return false;
 	}
@@ -40,20 +40,20 @@ function getAuthor() {
 	return array(
 		'image' => array(
 			'src' => AUTHOR_PHOTO,
-			'alt' => ''
+			'alt' => AUTHOR_PHOTO_ALT,
 		),
 		'name'  => AUTHOR_NAME,
 		'content' => AUTHOR_BIO
 	);
 }
 
-function get_current_url() {
+function getCurrentUrl() {
 	return "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 }
 
-function social_share($id) {
-	$current_url = get_current_url();
-	$user_ip = get_the_ip();
+function socialShare($id) {
+	$current_url = getCurrentUrl();
+	$user_ip = getIPAddress();
 	return '<ul class="social-share social-share--'.$id.'">
 				<li class="social-share__item social-share__item--facebook">
 					<a class="social-share__link social-share__link--facebook social-share__link--facebook-'.$id.'" data-position="'.ucwords($id).'" data-label="'.$user_ip.'"
@@ -74,19 +74,5 @@ function social_share($id) {
 					</a>
 				</li>
 			</ul>';
-}
-
-/**
-* Get previous referrer from URL Param
-* @return string (/root/path/previous-page-url/)
-*/
-function get_referral_url() {
-	$referrer = '';
-	if($_GET['referrer'] && !empty($_GET['referrer'])) {
-		// process the url into a cleaner string
-		$url = urldecode($_GET['referrer']);
-		$referrer = $url;
-	}
-	return $referrer;
 }
 ?>

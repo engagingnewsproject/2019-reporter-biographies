@@ -46,9 +46,13 @@ $authorBios = array(
 
 define('AUTHOR_BIO', isset($authorBios[$authorBioKey]) ? $authorBios[$authorBioKey] : false);
 define('AUTHOR_PHOTO', isset($authorPhotos[$authorPhotoKey]) ? $authorPhotos[$authorPhotoKey] : false);
+define('AUTHOR_PHOTO_ALT', '');
 define('AUTHOR_NAME', 'Jim Phipps');
 define('USE_AUTHOR_PHOTO', isset($authorPhotos[$authorPhotoKey]));
 define('USE_AUTHOR_BIO', isset($authorBios[$authorBioKey]));
+
+
+// Article constants
 define('PUBDATE', 'Aug. 6, 2019');
 
 

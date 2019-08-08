@@ -2,8 +2,8 @@
 <html>
 <head>
     <?php
-        $user_ip = get_the_ip();
-        $current_url = get_current_url();
+        $user_ip = getIPAddress();
+        $current_url = getCurrentUrl();
     ?>
 
     <meta charset="UTF-8">

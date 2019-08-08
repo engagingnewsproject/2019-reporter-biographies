@@ -20,7 +20,7 @@ class CommentLogging
 				//set instance variables
 				$this->user_id = $user_id;
 				$this->url = $url;
-				$this->ipAddress = $this->get_the_ip();
+				$this->ipAddress = $this->getIPAddress();
 				$this->currTime = date("m/d/Y g:i:s A",time()-18000);
 				$this->name = str_replace("|", "&#124;", filter_var($name, FILTER_SANITIZE_STRING));
 				$this->comment = str_replace("|", "&#124;", filter_var($comment, FILTER_SANITIZE_STRING));
@@ -49,7 +49,7 @@ class CommentLogging
 			}
 		}
 
-		function get_the_ip() {
+		function getIPAddress() {
 			//Just get the headers if we can or else use the SERVER global
 			if ( function_exists( 'apache_request_headers' ) ) {
 				$headers = apache_request_headers();
