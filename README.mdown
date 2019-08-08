@@ -16,3 +16,6 @@ All clicks on buttons or links are tracked via Google Analytics and pass the but
 
 ### Local Set-up
 We're using Gulp to compile. Run <code>npm install</code> from your project directory to install the node modules from <code>package.json</code>. Run <code>gulp</code> on the command line to serve the project up via localhost with BrowserSync.
+
+### When Finished
+Make sure to update the article-list.html file with links to all of your articles
