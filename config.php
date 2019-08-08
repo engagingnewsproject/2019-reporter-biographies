@@ -91,7 +91,7 @@ $authorBios = array(
 define('AUTHOR_BIO', isset($authorBios[$authorBioKey]) ? $authorBios[$authorBioKey] : false);
 define('AUTHOR_PHOTO', isset($authorPhotos[$authorPhotoKey]) ? $authorPhotos[$authorPhotoKey] : false);
 define('AUTHOR_PHOTO_ALT', '');
-define('AUTHOR_NAME', 'Jim Phipps');
+define('AUTHOR_NAME', 'Jim Phelps');
 // Study variations
 define('USE_AUTHOR_PHOTO', isset($authorPhotos[$authorPhotoKey]));
 define('USE_AUTHOR_BIO', isset($authorBios[$authorBioKey]));
