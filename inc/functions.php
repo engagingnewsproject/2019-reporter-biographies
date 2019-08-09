@@ -43,7 +43,7 @@ function getAuthor() {
 			'alt' => AUTHOR_PHOTO_ALT,
 		),
 		'name'  => AUTHOR_NAME,
-		'content' => AUTHOR_BIO
+		'bio' => AUTHOR_BIO
 	);
 }
 
