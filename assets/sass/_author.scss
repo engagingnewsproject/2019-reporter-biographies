@@ -5,13 +5,16 @@
     @extend %clearfix;
 }
 
+.author__basics {
+    display: flex;
+    align-items: flex-end;
+}
+
 .author__image {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 125px;
+    height: 125px;
     margin-right: $spacing__base * 0.4;
-    margin-bottom: $spacing__base * 0.2;
-    float: left;
 }
 
 .author__name,
@@ -20,11 +23,13 @@
     line-height: 1.4;
 }
 
+.author__byline {
+    margin-bottom: $spacing__base;
+}
+
 .author__name {
     font-size: 0.8rem;
     margin: 0;
-    position: relative;
-    padding-top: 2rem;
 }
 
 .author__job {
@@ -43,7 +48,7 @@
 
 .author__content {
 
-    margin-top: $spacing__base * 0.4;
+    margin-top: $spacing__base * -0.5;
 
     p, ul {
         font-size: 0.85rem;

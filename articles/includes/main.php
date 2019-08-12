@@ -9,11 +9,15 @@
             <p class="byline">Posted on <time pubdate="pubdate"><?php echo $article['pubdate'];?></time></p>
             <div class="article__extra-header-info">
                 <div class="author">
-                    <?php if(!empty($author['image']['src'])) { ?>
-                    <img class="author__image" src="<?php echo $author['image']['src'];?>" alt="<?php echo $author['image']['alt'];?>" />
-                    <?php } ?>
-                    <p class="author__name">By <?php echo $author['name'];?></p>
-                    <p class="author__job"><?php echo SITE_NAME;?> Staff Reporter</p>
+                    <div class="author__basics">
+                        <?php if(!empty($author['image']['src'])) { ?>
+                        <img class="author__image" src="<?php echo $author['image']['src'];?>" alt="<?php echo $author['image']['alt'];?>" />
+                        <?php } ?>
+                        <div class="author__byline">
+                            <p class="author__name">By <?php echo $author['name'];?></p>
+                            <p class="author__job"><?php echo SITE_NAME;?> Staff Reporter</p>
+                        </div>
+                    </div>
                     <?php if(!empty($author['bio'])) {include('author-bio.php');}?>
                 </div>
 
