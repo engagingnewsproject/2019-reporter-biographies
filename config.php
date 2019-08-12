@@ -76,10 +76,12 @@ foreach($config['variations'] as $key => $val) {
         );
     } else {
         // use the default
-        $variations[$val['id']] = array(
-            'GETKeyVal' => 'default',
-            'value' =>   $val['GET']['values']['default']
-        );
+        // $variations[$val['id']] = array(
+        //     'GETKeyVal' => 'default',
+        //     'value' =>   $val['GET']['values']['default']
+        // );
+        die('Missing a valid parameter for '.$val['GET']['key']);
+
     }
 }
 
