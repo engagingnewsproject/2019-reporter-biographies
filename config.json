@@ -3,8 +3,8 @@
     "newsbeatDirectoryName": "2019-reporter-biographies",
     "studyPrefix": "bio_",
     "siteName": "The Gazette Star",
-    "variations": {
-        "photo": {
+    "variations": [
+        {
             "id": "photo",
             "constant": "AUTHOR_PHOTO",
             "GET": {
@@ -16,7 +16,7 @@
                 }
             }
         },
-        "bio": {
+        {
             "id": "bio",
             "constant": "AUTHOR_BIO",
             "GET": {
@@ -28,7 +28,7 @@
                 }
             }
         }
-    },
+    ],
     "article": {
         "author": {
             "name": "Jim Phelps",
